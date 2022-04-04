@@ -1,11 +1,11 @@
 
 import { FacturaServices } from "../conexion/Factura/FacturaService";
 
-const{getFacturas, agregarFactura}=FacturaServices();
+const{getFactura, agregarFactura}=FacturaServices();
 
 
 const actGetFacturas = (setfactura)=>{
-    getFacturas(setfactura);
+    getFactura(setfactura);
 }
 
 const actSetFactura = (factura)=>{
