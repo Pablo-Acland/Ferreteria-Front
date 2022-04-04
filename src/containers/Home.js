@@ -1,5 +1,6 @@
 import React from "react";
 
+import AgregarProveedor from "../components/pages/AgregarProveedor";
 import ListarFacturas from "../components/pages/ListarFacturas";
 import ListarProveedores from "../components/pages/ListarProveedores";
 import AgregarCliente from "../components/pages/AgregarCliente";
@@ -36,8 +37,9 @@ function Home({ user }) {
                   <Link className="m-4 text-success" to="/ListarClientes">Listar Clientes  </Link>
                   <Link className="m-4 text-success" to="/AgregarProductos">Agregar Productos  </Link>
                   <Link className="m-4 text-success" to="/Vender">Venta  </Link>
-                  <Link className="m-4 text-success" to="/ListarProveedores">ListarProveedores </Link>
-                  <Link className="m-4 text-success" to="/ListarFacturas">ListarFacturas </Link>
+                  <Link className="m-4 text-success" to="/ListarProveedores">Listar Proveedores </Link>
+                  <Link className="m-4 text-success" to="/AgregarProveedor">Agregar Proveedores </Link>
+                  <Link className="m-4 text-success" to="/ListarFacturas">Listar Facturas </Link>
             </div>
               <Routes>
               <Route path="/AgregarCliente" element={<AgregarCliente />} />
@@ -45,6 +47,7 @@ function Home({ user }) {
               <Route path="/AgregarProductos" element={<AgregarProductos />} />
               <Route path="/Vender" element={<Vender />} />
               <Route path="/ListarProveedores" element={<ListarProveedores />} />
+              <Route path="/AgregarProveedor" element={<AgregarProveedor />} />
               <Route path="/ListarFacturas" element={<ListarFacturas />} />
             </Routes>
           </Router>
