@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector, useDispatch} from 'react-redux';
 import { ClienteAccion } from '../../actions/ClienteAction';
 import { useState, useEffect } from 'react';
 
