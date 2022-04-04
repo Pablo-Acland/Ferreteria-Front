@@ -33,12 +33,29 @@ const AgregarProveedor = ()=>{
     }
 
     return (
-    <div>
+        <div>
         <form onSubmit={add}>
-        <input type= "text" onChange={modificarNombre}/>
-        <input type= "text" onChange={modificarCelular}/>
-        <input type= "text" onChange={modificarCI}/> 
-        <input type= "submit" value= "Agregar"/>
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td><input type= "text" onChange={modificarNombre}/></td>
+            </tr>
+            <tr>
+                <td>Precio</td>
+                <td><input type= "text" onChange={modificarCelular}/></td>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td><input type= "text" onChange={modificarCI}/> </td>
+            </tr>
+            <tr>
+                <td colSpan="2"><input type= "submit" value= "Agregar"/></td>
+            </tr>
+        </table>
+        
+        
+         
+        
         </form>
         </div>
     );

@@ -33,14 +33,35 @@ const AgregarCliente = ()=>{
     }
 
     return (
-    <div>
-        <form onSubmit={add}>
-        <input type= "text" onChange={modificarNombre}/>
-        <input type= "text" onChange={modificarCelular}/>
-        <input type= "text" onChange={modificarCI}/> 
-        <input type= "submit" value= "Agregar"/>
-        </form>
-        </div>
+
+            <div className='d-flex justify-content-center'>
+            <form onSubmit={add}>
+            <div>
+            <h2>Agregar CLientes</h2>
+            </div>
+            <table>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input className='m-2' type= "text" onChange={modificarNombre}/></td>
+                </tr>
+                <tr>
+                    <td>Precio</td>
+                    <td><input className='m-2' type= "text" onChange={modificarCelular}/></td>
+                </tr>
+                <tr>
+                    <td>Cantidad</td>
+                    <td><input className='m-2' type= "text" onChange={modificarCI}/>  </td>
+                </tr>
+                <tr>
+                    <td colSpan="2"><input type= "submit" value= "Agregar"/></td>
+                </tr>
+            </table>
+
+
+            
+
+            </form>
+            </div>
     );
 
 }
