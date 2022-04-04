@@ -26,9 +26,26 @@ export const ProductosServices = () =>{
             });
         
     };
+
+    const updateProducto =(producto)=>{
+        let id = producto.id;
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body : JSON.stringify(producto)
+        };
+
+        fetch(URL_BASE + '/producto/update/'+id, requestOptions)
+            .then(response => response.json())
+            .then((p) => {
+               console.log("producto agregado");
+            });
+        
+    };
    
             return{
         getProducto,
-        agregarProducto
+        agregarProducto,
+        updateProducto
     }
 }

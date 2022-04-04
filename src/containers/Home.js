@@ -23,7 +23,7 @@ function Home({ user }) {
      </div>
      <div className="title-saludo" >
             <Router>
-                  <Link to= "/AgregarCliente">Agregar un Cliente  </Link> 
+                  <Link to= "/AgregarCliente" >Agregar un Cliente  </Link> 
                   <Link to="/ListarClientes">Listar Clientes  </Link>
                   <Link to="/AgregarProductos">Agregar Productos  </Link>
                   <Link to="/Vender">Venta  </Link>

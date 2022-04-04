@@ -37,15 +37,21 @@ const Vender = () =>{
             let indice= listProductos.findIndex(p=>p.id===producto.id);
             console.log(indice);
             if(indice===-1){
+                if(producto.cantidad!==0){
                 listProductos.push(pro);
+                producto.cantidad--;
                 let a =Object.values(listProductos);
                 setListProductos(a);
+            }
             }else{
-
+                if(producto.cantidad!==0){
                 listProductos[indice].cantidad++;
+                producto.cantidad--;
+                console.log(producto.cantidad);
                 listProductos[indice].precio+=producto.precio;
                 let a =Object.values(listProductos);
                 setListProductos(a);
+                }
             }
         };
         const removeProducto = (producto) =>{
@@ -90,6 +96,17 @@ const Vender = () =>{
             accionesF.actSetFactura(factura);
 
         }
+        const actualizarProductos=()=>{
+            productos.map((p)=>{
+                acciones.actUpdateProducto(p);
+            });
+        }
+
+        const cantidad=(producto)=>{
+            if(producto.cantidad<3){
+                window.alert("Cantidad del producto baja ")
+            }
+        }
 
 
     return(
@@ -109,7 +126,9 @@ const Vender = () =>{
                             <td>{producto.nombreProducto}</td>
                             <td>{producto.precio}</td>
                             <td>{producto.cantidad}</td>
-                            <td><button className='title'  onClick={()=>{addProducto(producto)}} >+</button></td>
+                            <td><button className='title'  onClick={()=>{addProducto(producto);
+                                cantidad(producto);
+                            }} >+</button></td>
                             <td><button  onClick={()=>{removeProducto(producto)}} >-</button></td>
                             
                         </tr>
@@ -143,7 +162,9 @@ const Vender = () =>{
             <td>{precioTotal}</td>
             </tr>
             </tbody>
-            <button onClick={()=>{crearFactura()}}>Comprar</button>
+            <button onClick={()=>{crearFactura();
+                actualizarProductos();
+            }}>Comprar</button>
         </table>
     </div>
     );
