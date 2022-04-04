@@ -35,7 +35,12 @@ function App() {
     }
   });
 
-  return <>{user ? <Home user={user} /> : <Login />}</>;
+  return (
+  <div className="container">
+  {user ? <Home user={user} /> : <Login />}
+  </div>
+  );
+  
 }
 
 export default App;

@@ -16,21 +16,29 @@ const auth = getAuth(firebaseApp);
 function Home({ user }) {
   return (
     <div>
-      <div className="div-logo">
+      <div className="d-flex justify-content-between div-logo">
+        <div >
         <img className="logo" src={Logo} />
+        </div>
+        <div className="h-25 m-2">
+          <button className="btn btn-primary"  onClick={() => signOut(auth)}> Cerrar sesión</button>
+        </div>
+        
      </div>
-     <div className="div-home" >
+     <div className="d-flex justify-content-center div-home" >
           <h1  >Home</h1>
-          <button onClick={() => signOut(auth)}> Cerrar sesión</button>
+          
      </div>
      <div className="title-saludo" >
             <Router>
-                  <Link to= "/AgregarCliente" >Agregar un Cliente  </Link> 
-                  <Link to="/ListarClientes">Listar Clientes  </Link>
-                  <Link to="/AgregarProductos">Agregar Productos  </Link>
-                  <Link to="/Vender">Venta  </Link>
-                  <Link to="/ListarProveedores">ListarProveedores </Link>
-                  <Link to="/ListarFacturas">ListarFacturas </Link>
+            <div className="d-flex justify-content-center">
+                  <Link className="m-4 text-success" to= "/AgregarCliente" >Agregar un Cliente  </Link> 
+                  <Link className="m-4 text-success" to="/ListarClientes">Listar Clientes  </Link>
+                  <Link className="m-4 text-success" to="/AgregarProductos">Agregar Productos  </Link>
+                  <Link className="m-4 text-success" to="/Vender">Venta  </Link>
+                  <Link className="m-4 text-success" to="/ListarProveedores">ListarProveedores </Link>
+                  <Link className="m-4 text-success" to="/ListarFacturas">ListarFacturas </Link>
+            </div>
               <Routes>
               <Route path="/AgregarCliente" element={<AgregarCliente />} />
               <Route path="/ListarCLientes" element={<ListarClientes />} />
@@ -38,7 +46,6 @@ function Home({ user }) {
               <Route path="/Vender" element={<Vender />} />
               <Route path="/ListarProveedores" element={<ListarProveedores />} />
               <Route path="/ListarFacturas" element={<ListarFacturas />} />
-              <Route path="/" element={<ListarClientes />} />
             </Routes>
           </Router>
      </div>
