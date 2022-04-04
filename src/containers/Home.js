@@ -1,7 +1,8 @@
 import React from "react";
 
-
-
+import AgregarCliente from "../components/pages/AgregarCliente";
+import ListarClientes from "../components/pages/ListarClientes";
+import { BrowserRouter as Router, Link, Routes, Route  } from "react-router-dom";
 import Logo from '../assets/img/logo.png'
 
 import firebaseApp from "../firebase/Credenciales";
@@ -19,6 +20,15 @@ function Home({ user }) {
           <button onClick={() => signOut(auth)}> Cerrar sesión</button>
      </div>
      <div className="title-saludo" >
+            <Router>
+                  <Link to= "/AgregarCliente">Agregar un Cliente  </Link> 
+                  <Link to="/ListarClientes">Listar Clientes  </Link>
+              <Routes>
+              <Route path="/AgregarCliente" element={<AgregarCliente />} />
+              <Route path="/ListarCLientes" element={<ListarClientes />} />
+              <Route path="/" element={<ListarClientes />} />
+            </Routes>
+          </Router>
      </div>
     </div>
   );
