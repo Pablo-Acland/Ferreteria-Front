@@ -2,6 +2,8 @@ import React from "react";
 
 import AgregarCliente from "../components/pages/AgregarCliente";
 import ListarClientes from "../components/pages/ListarClientes";
+import AgregarProductos from "../components/pages/AgregarProductos";
+import Vender from "../components/Vender";
 import { BrowserRouter as Router, Link, Routes, Route  } from "react-router-dom";
 import Logo from '../assets/img/logo.png'
 
@@ -23,9 +25,13 @@ function Home({ user }) {
             <Router>
                   <Link to= "/AgregarCliente">Agregar un Cliente  </Link> 
                   <Link to="/ListarClientes">Listar Clientes  </Link>
+                  <Link to="/AgregarProductos">Agregar Productos  </Link>
+                  <Link to="/Vender">Venta  </Link>
               <Routes>
               <Route path="/AgregarCliente" element={<AgregarCliente />} />
               <Route path="/ListarCLientes" element={<ListarClientes />} />
+              <Route path="/AgregarProductos" element={<AgregarProductos />} />
+              <Route path="/Vender" element={<Vender />} />
               <Route path="/" element={<ListarClientes />} />
             </Routes>
           </Router>
