@@ -2,6 +2,9 @@ import React from 'react';
 import { ProductoAccion } from "../actions/ProductosAction";
 import { useState, useEffect } from 'react';
 import ListarClientes from './pages/ListarClientes';
+import { FacturaAccion } from '../actions/FacturaAction';
+
+
 const Vender = () =>{
 
 
@@ -9,7 +12,8 @@ const Vender = () =>{
     const [listProductos, setListProductos]=useState([])
     const { acciones } = ProductoAccion();
     const [precioTotal, setPrecioTotal]=useState(0);
-
+    const [cliente, setCliente]=useState(null);
+    const { accionesF }= FacturaAccion();
     useEffect(() => {
         acciones.actGetProducto(setProducto);
 
@@ -71,10 +75,26 @@ const Vender = () =>{
             }
         } 
 
+        const crearFactura= ()=>{
+            let fecha = new Date();
+            fecha.setFullYear(); 
+            let factura ={
+                consecutivoFactura: "8326482021",
+                fecha: fecha,
+                nombreCliente: cliente.nombre,
+                nombreEmpleado: "Raul",
+                productos: listProductos,
+                totalPagar: precioTotal
+            }
+
+            accionesF.actSetFactura(factura);
+
+        }
+
 
     return(
         <div>
-            <ListarClientes/>
+            <ListarClientes setCliente={setCliente}/>
         <table>
             <thead>
                 <tr>
@@ -89,7 +109,7 @@ const Vender = () =>{
                             <td>{producto.nombreProducto}</td>
                             <td>{producto.precio}</td>
                             <td>{producto.cantidad}</td>
-                            <td><button  onClick={()=>{addProducto(producto)}} >+</button></td>
+                            <td><button className='title'  onClick={()=>{addProducto(producto)}} >+</button></td>
                             <td><button  onClick={()=>{removeProducto(producto)}} >-</button></td>
                             
                         </tr>
@@ -123,7 +143,7 @@ const Vender = () =>{
             <td>{precioTotal}</td>
             </tr>
             </tbody>
-            <button>Comprar</button>
+            <button onClick={()=>{crearFactura()}}>Comprar</button>
         </table>
     </div>
     );

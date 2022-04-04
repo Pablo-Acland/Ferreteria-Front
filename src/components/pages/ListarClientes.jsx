@@ -2,11 +2,11 @@ import React from 'react';
 import { ClienteAccion } from '../../actions/ClienteAction';
 import { useState, useEffect } from 'react';
 
-const ListarClientes = () => {
+const ListarClientes = (props) => {
     
     const [clientes, setClientes] = useState([]);
     const { acciones } = ClienteAccion();
-
+    
     useEffect(() => {
         console.log(ClienteAccion());
 
@@ -38,6 +38,7 @@ const ListarClientes = () => {
                                 <td>{cliente.nombre}</td>
                                 <td>{cliente.celular}</td>
                                 <td>{cliente.ci}</td>
+                                <td><input type="radio" id={cliente.id} name="cliente" value={cliente} onClick={()=>{ props.setCliente(cliente)}}></input></td>
                             </tr>
                         );
                     })}
