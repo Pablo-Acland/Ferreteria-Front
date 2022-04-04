@@ -45,15 +45,15 @@ const AgregarCliente = ()=>{
                     <td><input className='m-2' type= "text" onChange={modificarNombre}/></td>
                 </tr>
                 <tr>
-                    <td>Precio</td>
+                    <td>Celular</td>
                     <td><input className='m-2' type= "text" onChange={modificarCelular}/></td>
                 </tr>
                 <tr>
-                    <td>Cantidad</td>
+                    <td>CI</td>
                     <td><input className='m-2' type= "text" onChange={modificarCI}/>  </td>
                 </tr>
                 <tr>
-                    <td colSpan="2"><input type= "submit" value= "Agregar"/></td>
+                    <td  colSpan="2"><input className="btn btn-primary" type= "submit" value= "Agregar"/></td>
                 </tr>
             </table>
 

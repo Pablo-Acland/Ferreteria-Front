@@ -20,13 +20,14 @@ const ListarFacturas = (props) => {
 
     
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
             <table>
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Celular</th>
-                        <th>DNI</th>
+                        <th>Empleado</th>
+                        <th>Productos</th>
+                        <th>Total a pagar</th>
                     </tr>
                 </thead>
                 <tbody>

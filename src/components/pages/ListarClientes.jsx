@@ -22,7 +22,7 @@ const ListarClientes = (props) => {
     
     console.log(clientes)
     return (
-        <div>
+        <div className='d-flex justify-content-center m-4'>
             <table>
                 <thead>
                     <tr>

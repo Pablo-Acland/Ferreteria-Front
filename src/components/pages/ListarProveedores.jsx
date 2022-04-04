@@ -21,7 +21,7 @@ const ListarProveedores = () => {
 
     
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
             <table>
                 <thead>
                     <tr>

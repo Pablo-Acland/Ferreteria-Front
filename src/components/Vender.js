@@ -110,7 +110,7 @@ const Vender = () =>{
 
 
     return(
-        <div>
+        <div className='d-flex justify-content-center'>
             <ListarClientes setCliente={setCliente}/>
         <table>
             <thead>
@@ -126,10 +126,10 @@ const Vender = () =>{
                             <td>{producto.nombreProducto}</td>
                             <td>{producto.precio}</td>
                             <td>{producto.cantidad}</td>
-                            <td><button className='title'  onClick={()=>{addProducto(producto);
+                            <td><button className='btn btn-success title'  onClick={()=>{addProducto(producto);
                                 cantidad(producto);
                             }} >+</button></td>
-                            <td><button  onClick={()=>{removeProducto(producto)}} >-</button></td>
+                            <td><button className="btn btn-warning" onClick={()=>{removeProducto(producto)}} >-</button></td>
                             
                         </tr>
 

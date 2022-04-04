@@ -31,8 +31,11 @@ const AgregarProductos = ()=>{
     }
 
     return (
-    <div>
+    <div className='d-flex justify-content-center'>
         <form onSubmit={add}>
+        <div>
+            <h2>Agregar Productos</h2>
+            </div>
         <table>
             <tr>
                 <td>Nombre</td>
@@ -47,7 +50,7 @@ const AgregarProductos = ()=>{
                 <td><input type= "text" onChange={modificarCantidad}/></td>
             </tr>
             <tr>
-                <td colSpan="2"><input type= "submit" value= "Agregar"/></td>
+                <td colSpan="2"><input className=" btn-primary" type= "submit" value= "Agregar"/></td>
             </tr>
         </table>
         
